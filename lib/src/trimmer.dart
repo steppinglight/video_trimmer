@@ -217,7 +217,7 @@ class Trimmer {
       _outputFormatString = outputFormat.toString();
     }
 
-    String _trimLengthCommand = '-i "$_videoPath" -ss $startPoint';
+    String _trimLengthCommand = '-ss $startPoint -i "$_videoPath" -avoid_negative_ts make_zero ';
     if (endPoint > startPoint) {
       _trimLengthCommand += ' -t ${endPoint - startPoint}';
     }
